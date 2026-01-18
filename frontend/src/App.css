@@ -1,0 +1,128 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #d9534f;
+  background-color: #f2dede;
+  border-radius: 4px;
+}
+
+.tabela-frequencia {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-frequencia th, 
+.tabela-frequencia td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-frequencia th {
+  background-color: #009879;
+  color: #ffffff;
+}
+
+.tabela-frequencia tr:hover {
+  background-color: #f5f5f5;
+}
+
+.badge {
+  background-color: #009879;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.btn-atualizar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-atualizar:hover {
+  background-color: #555;
+}
+
+/* Container do Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Esconde o checkbox padrão do HTML */
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* O "trilho" por onde o botão corre */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Cor quando desligado (cinza) */
+  transition: .4s;
+  border-radius: 34px; /* Deixa redondinho */
+}
+
+/* A "bolinha" do botão */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Cor quando ligado (checked) */
+input:checked + .slider {
+  background-color: #2196F3; /* Azul padrão W3, pode mudar para #4CAF50 (verde) */
+}
+
+/* Move a bolinha quando ligado */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.data-input {
+  margin-top: 20px;
+  padding: 7px 10px;
+}
+
+.p-row {
+  display: flex;
+}
+
+.p-col-6 {
+  width: 50%;
+}
