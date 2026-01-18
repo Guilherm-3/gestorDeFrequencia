@@ -85,10 +85,10 @@ exports.listarPessoas = async (req, res) => {
                  p.NOME,
                  0 AS PRESENTE,
                  p.ID_PESSOA
-            FROM pessoa p 
+            FROM PESSOA p 
            WHERE NOT EXISTS (
             SELECT 1 
-              FROM frequencia 
+              FROM FREQUENCIA 
              WHERE ID_PESSOA = p.ID_PESSOA 
                AND DATE(DATA_MARCADA) = ?
            )
@@ -97,8 +97,8 @@ exports.listarPessoas = async (req, res) => {
                  p.NOME,
                  f.ID_FREQUENCIA AS PRESENTE,
                  p.ID_PESSOA
-            FROM pessoa p 
-       LEFT JOIN frequencia f
+            FROM PESSOA p 
+       LEFT JOIN FREQUENCIA f
               ON f.ID_PESSOA = p.ID_PESSOA
            WHERE DATE(f.DATA_MARCADA) = ?
         ORDER BY 2
