@@ -25,10 +25,10 @@ function App() {
   const [dados, setDados] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(null);
-  const [dataPesquisa, setDataPesquisa] = useState(new Date().toISOString().split('T')[0]);
+  const [dataPesquisa, setDataPesquisa] = useState(`${new Date().getFullYear()}-${String(new Date().getMonth() + 1).padStart(2, '0')}-${String(new Date().getDate()).padStart(2, '0')}`);
 
   const buscarFrequencia = async () => {
-    try {      
+    try {
       const response = await fetch(URL+'/chamaviva/pessoa/'+dataPesquisa);
       const resultado = await response.json()
       
@@ -47,7 +47,6 @@ function App() {
       // função para salvar
       // retornar o obj
 
-      let dataHoje = new Date().toISOString().split('T')[0];
       let novoEstado = false;
       if(obj.PRESENTE === 0) {
         novoEstado = true
@@ -60,7 +59,7 @@ function App() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             idPessoa: obj.ID_PESSOA,
-            dataMarcada: dataHoje
+            dataMarcada: dataPesquisa
           })
         });
       } else {
@@ -104,6 +103,7 @@ function App() {
       
       <div className='p-row'>
         <div className='p-col-6'>
+          <h>Data de Pesquisa:</h>
           <input 
             className='data-input'
             id='dataPesquisa'
